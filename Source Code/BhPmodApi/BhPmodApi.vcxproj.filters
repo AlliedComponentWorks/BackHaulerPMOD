@@ -44,7 +44,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="SiUSBXp.lib">
+    <Library Include="..\SiUSBXp\SiUSBXp.lib">
       <Filter>Source Files</Filter>
     </Library>
   </ItemGroup>

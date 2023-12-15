@@ -41,7 +41,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="..\Release\BhPmodApi.lib">
+    <Library Include="..\Debug\BhPmodApi.lib">
       <Filter>Source Files</Filter>
     </Library>
   </ItemGroup>
