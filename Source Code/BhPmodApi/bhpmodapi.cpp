@@ -77,6 +77,7 @@ BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
    {
     /* The DLL is attaching to a process due to process initialization or a call to LoadLibrary */
     case DLL_PROCESS_ATTACH:
+     DisableThreadLibraryCalls(hinstDLL); // No need for thread attach/detach notifications.
      // MessageBox(NULL, "DllMain DLL_PROCESS_ATTACH", "", MB_TASKMODAL);
      // Attempt to open the device
      HW_Open();
@@ -655,11 +656,11 @@ DWORD HW_Open(void)
     device_found = 1;
     // Get and match the VID of a device
     SI_GetProductString(devindex, devidstr, SI_RETURN_VID);
-    sscanf(devidstr, "%X", &deviceid);
+    sscanf(devidstr, "%hX", &deviceid);
     if(deviceid != BHPMOD_VENDOR_ID) device_found = 0;
     // Get and match the PID of a device
     SI_GetProductString(devindex, devidstr, SI_RETURN_PID);
-    sscanf(devidstr, "%X", &deviceid);
+    sscanf(devidstr, "%hX", &deviceid);
     if(deviceid != BHPMOD_PRODUCT_ID) device_found = 0;
 
     // If this device is what we are looking for, try to open it

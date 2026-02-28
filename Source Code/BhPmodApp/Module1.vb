@@ -14,7 +14,7 @@ Public PresentConfiguration As Byte = PMOD_CONFIGURATION_IO_ONLY
 'Kernel functions we use
 '---------------------------------------------------------------------------------------
 
-Declare Sub Sleep Lib "kernel32" (ByVal dwMilliseconds As Long)
+Declare Sub Sleep Lib "kernel32" (ByVal dwMilliseconds As UInteger)
 
 '---------------------------------------------------------------------------------------
 'Public functions  

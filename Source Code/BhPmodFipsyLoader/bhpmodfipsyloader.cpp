@@ -116,6 +116,7 @@ BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
    {
     /* The DLL is attaching to a process due to process initialization or a call to LoadLibrary */
     case DLL_PROCESS_ATTACH:
+     DisableThreadLibraryCalls(hinstDLL); // No need for thread attach/detach notifications.
      // MessageBox(NULL, "DllMain DLL_PROCESS_ATTACH", "", MB_TASKMODAL);
      break;
 
